@@ -8,8 +8,8 @@
       </div>
     </div>
     <div class="container">
-      <p class="org-description is-size-4">paragraph 1 Pen Fan Nook</p>
-      <p class="org-description is-size-4">paragraph 2 still pen fan Nook</p>
+      <p class="org-description is-size-4">paragraph 1 nong jaehyunnnn</p>
+      <p class="org-description is-size-4">paragraph 2 nong jaehyun narakkk</p>
     </div>
   </div>
 </template>
