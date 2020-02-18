@@ -35,6 +35,8 @@ export default new VueRouter({
       }
   ]
 })
+
+
 // const routes = [
 //   {
 //     path: '/',
