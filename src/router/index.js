@@ -32,31 +32,17 @@ export default new VueRouter({
       path: '/collectData',
       name: 'CollectData',
       component: () => import('../views/CollectData.vue')
-      }
+    },
+    {
+      path: '/addschool',
+      name: 'AddSchool',
+      component: () => import('../views/AddSchool.vue')
+    },
+    {
+      path: '/collectData2',
+      name: 'Collectdata2',
+      component: () => import('../views/CollectData2.vue')
+    }
   ]
 })
 
-
-// const routes = [
-//   {
-//     path: '/',
-//     name: 'Home',
-//     component: Home
-//   },
-//   {
-//     path: '/about',
-//     name: 'About',
-//     // route level code-splitting
-//     // this generates a separate chunk (about.[hash].js) for this route
-//     // which is lazy-loaded when the route is visited.
-//     component: () => import(/* webpackChunkName: "about" */ '../views/About.vue')
-//   }
-// ]
-
-// const router = new VueRouter({
-//   mode: 'history',
-//   base: process.env.BASE_URL,
-//   routes
-// })
-
-// export default router

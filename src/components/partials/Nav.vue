@@ -13,7 +13,7 @@
   <div id="navbar" class="navbar-menu">
     <div class="navbar-start">
       <router-link to="/" class="navbar-item">Home</router-link>
-      <router-link to="/CollectData" class="navbar-item">Collect Data</router-link>
+      <router-link to="/collectdata" class="navbar-item">Collect Data</router-link>
       <router-link to="/about" class="navbar-item">About</router-link>
       <router-link to="/analysis" class="navbar-item">Analysis</router-link>
     </div>
