@@ -1,9 +1,9 @@
 <template>
-  <div class="collectdata">
+  <div class="collectdata2">
     <section class="hero is-primary">
       <div class="hero-body is-primary">
         <div class="container has-text-centered">
-          <p class="title">Title</p>
+          <p class="title">Enter your student information</p>
           <p class="subtitle">Subtitle</p>
         </div>
       </div>
@@ -29,10 +29,10 @@
     <div class="field is-grouped is-grouped-centered">
       <p class="control">
         <!-- <a class="button is-primary">Next step</a> -->
-        <router-link to="/collectData2" class="button is-primary">Next step</router-link>
+        <router-link to="/collectdata" class="button is-primary">Back</router-link>
       </p>
       <p class="control">
-        <router-link to="/addschool" class="button is-light">Add more school</router-link>
+        <router-link to="/addschool" class="button is-light">Done</router-link>
       </p>
     </div>
   </div>

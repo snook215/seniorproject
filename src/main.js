@@ -3,6 +3,15 @@ import App from './App.vue'
 import router from './router'
 import './../node_modules/bulma/css/bulma.css';
 
+// Font AwesomeIcon for more info https://github.com/FortAwesome/vue-fontawesome#installation
+import { library } from '@fortawesome/fontawesome-svg-core'
+import { faUserSecret } from '@fortawesome/free-solid-svg-icons'
+import { FontAwesomeIcon } from '@fortawesome/vue-fontawesome'
+library.add(faUserSecret)
+
+Vue.component('font-awesome-icon', FontAwesomeIcon)
+
+Vue.config.productionTip = false
 
 // Import the Auth0 configuration
 import { domain, clientId } from "../auth_config.json";
@@ -11,6 +20,7 @@ import { domain, clientId } from "../auth_config.json";
 import { Auth0Plugin } from "./auth";
 
 //testnook
+
 
 // Install the authentication plugin here
 Vue.use(Auth0Plugin, {
