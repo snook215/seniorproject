@@ -9,21 +9,46 @@
       </div>
     </section>
     <!-- Start input field first row -->
-    <div class="field is-horizontal is-centered">
-      <div class="field is-centered">
-        <label class="label">Name</label>
-        <div class="control is-centered">
-          <input class="input" type="text" placeholder="Text input" />
-        </div>
-        <p class="help">Input your school name or zip code</p>
-      </div>
+    <br />
+    <div class="field">
+      <label class="label">School name</label>
+      <p class="control is-expanded">
+        <input class="input" type="text" placeholder="Name" />
+      </p>
+    </div>
+    <div class="field">
+      <label class="label">Address</label>
+      <p class="control is-expanded">
+        <input class="input" type="text" placeholder="Address" />
+      </p>
+    </div>
 
-      <div class="field is-centered">
-        <label class="label">Zipcode</label>
-        <div class="control">
-          <input class="input" type="taxt" placeholder="Zip code" />
+    <div class="field">
+      <label class="label">Sub District</label>
+      <p class="control is-expanded">
+        <input class="input" type="text" placeholder="Sub District" />
+      </p>       
+    </div>
+
+    <div class="field">
+          <label class="label">District</label>
+          <p class="control is-expanded">
+            <input class="input" type="text" placeholder="District" />
+          </p>
         </div>
-      </div>
+    <div class="field">
+      <label class="label">Province</label>
+      <p class="control is-expanded">
+        <input class="input is-success" type="text" placeholder="Provice" />
+      </p>
+    </div>
+
+    <div class="field">
+      <label class="label">Tel.</label>
+      <p class="control is-expanded">
+        <input class="input" type="tel" placeholder="Your phone number" />
+      </p>
+      <p class="help">Do not enter the first zero</p>
     </div>
 
     <div class="field is-grouped is-grouped-centered">
