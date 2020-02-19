@@ -18,6 +18,15 @@
         <p class="help">Input your school name or zip code</p>
       </div>
 
+      <div class="control">
+  <div class="select">
+    <select>
+      <option>Select dropdown</option>
+      <option>With options</option>
+    </select>
+  </div>
+</div>
+
       <div class="field is-centered">
         <label class="label">Zipcode</label>
         <div class="control">
