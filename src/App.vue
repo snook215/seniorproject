@@ -8,8 +8,11 @@
 
 <script>
 import Nav from './components/partials/Nav.vue';
+// import Login from "./views/Login";
+import store from "./store";
 
 export default {
+  store,
   name: 'app',
   components: {
     Nav
