@@ -27,156 +27,63 @@
                         <th>Class</th>
                         <th>Age</th>
                         <th>Gender</th>
-                        <th>Height</th>
-                        <th>Weight</th>
                     </tr>
                 </thead>
                 <tbody>
-                    <tr>
-                    <th>1</th>
-                    <td>0038</td>
-                    <td><a href="https://en.wikipedia.org/wiki/Leicester_City_F.C.">nooknook</a>
-                    </td>
-                    <td>KMUTT</td>
-                    <td>12</td>
-                    <td>3</td>
-                    <td>17</td>
-                    <td>Female</td>
-                    <td>132</td>
-                    <td>36</td>
+                    <tr v-for="(item , index) in users" :key="item.id">
+                    <th>{{index+1}}</th>
+                    <th>{{item.studentid}}</th>
+                    <td>{{item.name}}</td>
+                    <td>{{ "KMUTT"}}</td>
+                    <td>{{item.grade}}</td>
+                    <td>{{item.class}}</td>
+                    <td>{{item.age}}</td>
+                    <td>{{item.gender}}</td>
                     </tr>
-
-                   <tr>
-                    <th>2</th>
-                    <td>0059</td>
-                    <td><a href="https://en.wikipedia.org/wiki/Leicester_City_F.C.">jaehwan</a>
-                    </td>
-                    <td>KMUTT</td>
-                    <td>12</td>
-                    <td>3</td>
-                    <td>17</td>
-                    <td>Female</td>
-                    <td>150</td>
-                    <td>46</td>
-                    </tr>
-
-                    <tr>
-                    <th>3</th>
-                    <td>0020</td>
-                    <td><a href="https://en.wikipedia.org/wiki/Leicester_City_F.C.">BaekByul</a>
-                    </td>
-                    <td>SM</td>
-                    <td>8</td>
-                    <td>1</td>
-                    <td>3</td>
-                    <td>Female</td>
-                    <td>130</td>
-                    <td>26</td>
-                    </tr>
-
-                    <tr>
-                    <th>4</th>
-                    <td>0038</td>
-                    <td><a href="https://en.wikipedia.org/wiki/Leicester_City_F.C.">Nongjan</a>
-                    </td>
-                    <td>KMUTT</td>
-                    <td>12</td>
-                    <td>3</td>
-                    <td>17</td>
-                    <td>Female</td>
-                    <td>132</td>
-                    <td>36</td>
-                    </tr>
-
-                    <tr>
-                    <th>5</th>
-                    <td>0038</td>
-                    <td><a href="https://en.wikipedia.org/wiki/Leicester_City_F.C.">Ploy</a>
-                    </td>
-                    <td>KMUTT</td>
-                    <td>12</td>
-                    <td>3</td>
-                    <td>17</td>
-                    <td>Female</td>
-                    <td>132</td>
-                    <td>36</td>
-                    </tr>
-
-                    <tr>
-                    <th>6</th>
-                    <td>0038</td>
-                    <td><a href="https://en.wikipedia.org/wiki/Leicester_City_F.C.">Nam</a>
-                    </td>
-                    <td>KMUTT</td>
-                    <td>12</td>
-                    <td>3</td>
-                    <td>17</td>
-                    <td>Female</td>
-                    <td>132</td>
-                    <td>36</td>
-                    </tr>
-
-                    <tr>
-                    <th>7</th>
-                    <td>0038</td>
-                    <td><a href="https://en.wikipedia.org/wiki/Leicester_City_F.C.">Kai</a>
-                    </td>
-                    <td>KMUTT</td>
-                    <td>12</td>
-                    <td>3</td>
-                    <td>17</td>
-                    <td>Female</td>
-                    <td>132</td>
-                    <td>36</td>
-                    </tr>
-
-                    <tr>
-                    <th>8</th>
-                    <td>0038</td>
-                    <td><a href="https://en.wikipedia.org/wiki/Leicester_City_F.C.">Som</a>
-                    </td>
-                    <td>KMUTT</td>
-                    <td>12</td>
-                    <td>3</td>
-                    <td>17</td>
-                    <td>Female</td>
-                    <td>132</td>
-                    <td>36</td>
-                    </tr>
-
-                    <tr>
-                    <th>9</th>
-                    <td>0038</td>
-                    <td><a href="https://en.wikipedia.org/wiki/Leicester_City_F.C.">Java</a>
-                    </td>
-                    <td>KMUTT</td>
-                    <td>12</td>
-                    <td>3</td>
-                    <td>17</td>
-                    <td>Female</td>
-                    <td>132</td>
-                    <td>36</td>
-                    </tr>
-                    
-                    <tr>
-                    <th>10</th>
-                    <td>0038</td>
-                    <td><a href="https://en.wikipedia.org/wiki/Leicester_City_F.C.">waew</a>
-                    </td>
-                    <td>KMUTT</td>
-                    <td>12</td>
-                    <td>3</td>
-                    <td>17</td>
-                    <td>Female</td>
-                    <td>132</td>
-                    <td>36</td>
-                    </tr>
-
                 </tbody>
             </table>
         </div>
     </div>
 </template>
+<script>
+import DataService from "../services/dataService";
+
+export default {
+name: "app",
+  data() {
+    return {
+      users: [],
+      schools: []
+    }
+  },
+  mounted() {
+    this.retrieveUsers();
+    this.retrieveSchools();
+  },
+   methods: {
+    retrieveUsers() {
+      DataService.getStudent()
+        .then(response => {
+          this.users = response.data;
+          console.log(response.data);
+        })
+        .catch(e => {
+          console.log(e);
+        });
+    },
+    retrieveSchools() {
+      DataService.getSchool(this.users[0].schoolid)
+        .then(response => {
+          this.schools = response.name;
+          console.log(response.data);
+        })
+        .catch(e => {
+          console.log(e);
+        });
+    },
+  }
+};
+</script>
 
 <style lang="scss" scoped>
     .hero-body {

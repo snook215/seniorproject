@@ -79,8 +79,8 @@ export default new VueRouter({
       component: () => import('../views/adduser.vue')
     },
     {
-      path: '/addmeasurement',
-      name: 'aaddmeasurement',
+      path: '/addrecord',
+      name: 'addrecord',
       component: () => import('../views/addmeasurement.vue')
     }
   ]

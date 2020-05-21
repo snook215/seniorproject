@@ -39,7 +39,7 @@ app.post('/students', db.createStudent)
 // app.delete('/students/:id', db.deleteStudent)
 
 app.get('/record/:id', db.getRecordById)
-
+app.post('/records', db.createRecord)
 
 //UserLogin
 app.post('/login' , db.login)

@@ -248,6 +248,20 @@ const getRecordById = (request, response) => {
   })
 }
 
+const createRecord = (request, response) => {
+  const { studentid, result, height, weight} = request.body
+  
+  db.query('INSERT INTO eachrecord (studentid, result, height, weight) VALUES ($1, $2, $3, $4)', [studentid, result, height,weight], (error, results) => {
+    if (error) {
+
+      throw error
+    }
+    response.status(201).send(`User added with ID: ${results.name}`)
+  })
+}
+
+
+
 module.exports = {
   getUsers,
   getUserById,
@@ -263,7 +277,8 @@ module.exports = {
   login,
   register,
 
-  getRecordById
+  getRecordById,
+  createRecord
 
   // getSchool,
   // getSchoolById,

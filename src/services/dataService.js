@@ -45,7 +45,9 @@ class DataService {
     createStudent(data){
         return http.post("/students",data)
     }
-
+    measureRecord(data){
+        return http.post("/records",data)
+    }
     
 }
 

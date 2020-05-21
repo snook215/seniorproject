@@ -54,7 +54,6 @@
             <input type="radio" v-model="picked" value="Female" name="question" />
             Female
           </label>
-                <label class="label"> {{ picked }}</label>
         </div>
       </div>
 
@@ -114,7 +113,7 @@ export default {
   name: "collectdata",
   data() {
     return {
-      picked: "resr",
+      picked: "",
       grade: "",
       schoolid: "1"
     };
