@@ -1,7 +1,7 @@
 <template>
   <div class="events container">
     <h2 class="subtitle is-3">
-    News and Event ( Mai ruu Kaaa)
+    News and Event
     </h2>
     <div class="columns is-multiline">
       <div v-for="event in events" :event="event" :key="event.id" class="column is-one-quarter">

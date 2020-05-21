@@ -2,12 +2,16 @@ import Vue from 'vue'
 import App from './App.vue'
 import router from './router'
 import './../node_modules/bulma/css/bulma.css';
+import Chartkick from 'vue-chartkick'
+import Chart from 'chart.js'
 
 // Font AwesomeIcon for more info https://github.com/FortAwesome/vue-fontawesome#installation
 import { library } from '@fortawesome/fontawesome-svg-core'
 import { faUserSecret } from '@fortawesome/free-solid-svg-icons'
 import { FontAwesomeIcon } from '@fortawesome/vue-fontawesome'
 library.add(faUserSecret)
+
+Vue.use(Chartkick.use(Chart))
 
 Vue.component('font-awesome-icon', FontAwesomeIcon)
 
@@ -35,7 +39,7 @@ Vue.use(Auth0Plugin, {
   }
 });
 
-//sets our app in development mode.
+//sets our app in development 
 Vue.config.productionTip = false
 
 new Vue({

@@ -1,45 +1,37 @@
 <template>
   <div class="collectdata">
-    <section class="hero is-primary">
-      <div class="hero-body is-primary">
+    <section class="hero">
+      <div class="hero-body">
         <div class="container has-text-centered">
-          <p class="title">Title</p>
-          <p class="subtitle">Subtitle</p>
+          <p class="title">Collect data</p>
+          <!-- <p class="subtitle">Sub</p> -->
         </div>
       </div>
     </section>
-    <!-- Start input field first row -->
-    <div class="field is-horizontal">
-      <div class="field is-centered">
-        <label class="label">Name</label>
-        <div class="control is-centered">
-          <input class="input" type="text" placeholder="Text input" />
+    <br/>
+    <!-- select way to input -->
+        <p class="has-text-centered"> choose the way to input the student's information</p>
+        <br>
+        <div class="tabs is-toggle is-toggle-rounded is-centered">
+          <ul>
+            <li class>
+              <router-link to="/csvupload" class="button">.CSV File</router-link>      
+            </li>
+            <li class>
+              <router-link to="/collectdata2" class="button">Input by yourself</router-link>
+            </li>
+          </ul>
         </div>
-        <p class="help">Input your school name or zip code</p>
-      </div>
 
-      <div class="field is-centered">
-        <label class="label">Zipcode</label>
-        <div class="control">
-          <input class="input" type="taxt" placeholder="Zip code" />
-        </div>
-      </div>
-    </div>
-
-    <div class="field is-grouped is-grouped-centered">
-      <p class="control">
-        <!-- <a class="button is-primary">Next step</a> -->
-        <router-link to="/collectdata2" class="button is-primary">Next step</router-link>
-      </p>
-      <p class="control">
-        <router-link to="/addschool" class="button is-light">Add more school</router-link>
-      </p>
-    </div>
   </div>
 </template>
+
 
 <style lang="scss" scoped>
 .org-description {
   margin-top: 50px;
+}
+.hero-body {
+  background-color: rgb(204, 99, 204);
 }
 </style>

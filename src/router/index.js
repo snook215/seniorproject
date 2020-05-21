@@ -42,6 +42,46 @@ export default new VueRouter({
       path: '/collectData2',
       name: 'Collectdata2',
       component: () => import('../views/CollectData2.vue')
+    },
+    {
+      path: '/login',
+      name: 'Login',
+      component: () => import('../views/Login.vue')
+    },
+    {
+      path: '/profile',
+      name: 'Profile',
+      component: () => import('../views/Profile.vue')
+    },
+    {
+      path: '/studentdata',
+      name: 'ShowStudentdata',
+      component: () => import('../views/Studentdata.vue')
+    },
+    {
+      path: '/editstudent',
+      name: 'editstudent',
+      component: () => import('../views/editstudent.vue')
+    },
+    {
+      path: '/editteacher',
+      name: 'editteacher',
+      component: () => import('../views/editteacher.vue')
+    },
+    {
+      path: '/csvupload',
+      name: 'csvupload',
+      component: () => import('../views/csvupload.vue')
+    },
+    {
+      path: '/adduser',
+      name: 'adduser',
+      component: () => import('../views/adduser.vue')
+    },
+    {
+      path: '/addmeasurement',
+      name: 'aaddmeasurement',
+      component: () => import('../views/addmeasurement.vue')
     }
   ]
 })

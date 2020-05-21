@@ -10,7 +10,7 @@
           Just a little bit description
         </h2>
         <div class="button-block">
-          <button class="button is-xl is-dark">Test button</button>
+          <button class="button is-xl is-dark">Learn more</button>
         </div>
       </div>
     </div>
