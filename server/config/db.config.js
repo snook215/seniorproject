@@ -178,11 +178,15 @@ const register = (userMiddleware.validateRegister,(req,res,next) => {
 //login
 const login = (req, res, next) => {
   const {username,password} = req.body
+  console.log("1."+req.body.username)
+  console.log("2."+req.body.password)
+
   db.query(
     'SELECT * FROM userlogin WHERE username = $1', [username], (err, result) =>{
+    console.log("3."+result.rowCount)
       // user does not exists
       if (err) {
-        throw err;
+        // throw err;
         return res.status(400).send({
           msg: err
         });
@@ -200,7 +204,7 @@ const login = (req, res, next) => {
         (bErr, bResult) => {
           // wrong password
           if (bErr) {
-            throw bErr;
+            // throw bErr;
             return res.status(401).send({
               msg: 'Username or password is incorrect!'
             });

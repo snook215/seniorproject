@@ -1,9 +1,24 @@
 import Vue from 'vue'
 import App from './App.vue'
 import router from './router'
+import store from './store';
 import './../node_modules/bulma/css/bulma.css';
 import Chartkick from 'vue-chartkick'
 import Chart from 'chart.js'
+
+import VueRouter from 'vue-router'
+
+// ประกาศ Axios
+import VueAxios from "vue-axios";
+import axios from "axios";
+
+// set auth header
+axios.defaults.headers.common['Authorization'] = `Bearer ${store.state.token}`;
+
+Vue.config.productionTip = false
+// เรียกใช้
+Vue.use(VueAxios, axios);
+Vue.use(VueRouter)
 
 // Font AwesomeIcon for more info https://github.com/FortAwesome/vue-fontawesome#installation
 import { library } from '@fortawesome/fontawesome-svg-core'
@@ -44,5 +59,6 @@ Vue.config.productionTip = false
 
 new Vue({
   router,
+  store,
   render: h => h(App)
 }).$mount('#app')
