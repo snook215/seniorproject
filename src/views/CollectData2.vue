@@ -8,10 +8,10 @@
       </div>
     </section>
 
-<!-- choose plan -->
-<br/>
- 
-   <!--  <div id="file-js-example " class="file has-name is-info is-centered">
+    <!-- choose plan -->
+    <br />
+
+    <!--  <div id="file-js-example " class="file has-name is-info is-centered">
       <label class="file-label">
         <input class="file-input" type="file" name="resume">
         <span class="file-cta">
@@ -23,24 +23,23 @@
         <span class="file-name">No file uploaded</span>
       </label>
     </div>       
-      <p class="help has-text-centered">Import your .csv file</p> -->
-    
-    
+    <p class="help has-text-centered">Import your .csv file</p>-->
+
     <!-- form input student information -->
     <div class="b">
       <div class="field is-centered">
         <label class="label">Student ID</label>
         <div class="control is-centered">
-          <input class="input" type="text" placeholder="Student ID" />
+          <input class="input" type="text" v-model="studentid" placeholder="Student ID" />
         </div>
       </div>
       <label class="label">Name</label>
       <div class="field is-grouped">
         <p class="control is-expanded">
-          <input class="input" type="text" placeholder="Firstname" />
+          <input class="input" v-model="firstname" type="text" placeholder="Firstname" />
         </p>
         <p class="control is-expanded">
-          <input class="input" type="text" placeholder="Lastname" />
+          <input class="input" v-model="lastname" type="text" placeholder="Lastname" />
         </p>
       </div>
 
@@ -48,27 +47,28 @@
         <div class="control">
           <label class="label">Gender</label>
           <label class="radio">
-            <input type="radio" name="question" />
+            <input type="radio" v-model="picked" value="Male" name="question"  />
             Male
           </label>
           <label class="radio">
-            <input type="radio" name="question" />
+            <input type="radio" v-model="picked" value="Female" name="question" />
             Female
           </label>
+                <label class="label"> {{ picked }}</label>
         </div>
       </div>
 
       <div class="field is-centered">
         <label class="label">Age</label>
         <div class="control is-centered">
-          <input class="input" type="text" placeholder="Age" />
+          <input class="input" v-model="age" type="text" placeholder="Age" />
         </div>
       </div>
 
       <div class="control is-expanded">
         <label class="label">Grade</label>
         <div class="select">
-          <select name="grade">
+          <select name="grade" @change="handleChange($event)" v-model="grade">
             <option value="0">Select student grade</option>
             <option value="1">1</option>
             <option value="2">2</option>
@@ -85,41 +85,72 @@
           </select>
         </div>
       </div>
-      
+
       <div class="field is-centered">
         <label class="label">Class</label>
         <div class="control is-centered">
-          <input class="input" type="text" placeholder="Class" />
+          <input class="input" v-model="classr" type="text" placeholder="Class" />
         </div>
       </div>
-
     </div>
 
-    <br/>
-      <div class="field is-grouped is-grouped-centered">
-        <p class="control">
-          <router-link to="/collectdata" class="button">Back</router-link>
-        </p>
-        <p class="control">
-          <button class="button is-info ">Add more student</button>
-          <!-- <router-link to="/collectdata" class="button is-primary">Back</router-link> -->
-        </p>    
-        <p class="control">
-          <button @click="handleClick()" class="button is-success">Done</button>
-        </p>
-      </div>
-      <br/>
+    <br />
+    <div class="field is-grouped is-grouped-centered">
+      <p class="control">
+        <router-link to="/collectdata" class="button">Back</router-link>
+      </p>
+      <p class="control">
+        <button @click="addStudent()" class="button is-success">Done</button>
+      </p>
+    </div>
+    <br />
   </div>
 </template>
  
 <script>
+import DataService from "../services/dataService";
+
 export default {
+  name: "collectdata",
+  data() {
+    return {
+      picked: "resr",
+      grade: "",
+      schoolid: "1"
+    };
+  },
   methods: {
-    handleClick: function() {
-      alert("Add data success!");
+        handleChange(event) {
+            console.log(event.target.value)
+        },
+         addStudent() {
+      let obj = {
+        studentid: this.studentid,
+        name: this.firstname + " " + this.lastname,
+        schoolid: this.schoolid,
+        gender:this.picked,
+        age: this.age,
+        grade: this.grade,
+        classr: this.classr
+      }
+      if (this.studentid != "" && this.firstname != "" && this.lastname != "" &&
+          this.schoolid != "" && this.picked != "" && this.age != "" &&
+          this.grade != "" && this.classr != "") {
+        DataService.createStudent(obj)
+        .then(response => {
+          console.log(response.data);
+        })
+        .catch(e => {
+          console.log(e);
+        });
+        alert("Add student " + this.firstname);
+        this.$router.push('/');
+      } else {
+        alert("Please Fill All Required Field");
+      }
     }
   }
-}
+};
 </script>
 
 <style lang="scss" scoped>
@@ -136,5 +167,5 @@ div.b {
 }
 .hero-body {
   background-color: rgb(204, 99, 204);
-} 
+}
 </style>

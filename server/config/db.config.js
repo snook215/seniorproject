@@ -92,7 +92,7 @@ const getStudentById = (request, response) => {
 const createStudent = (request, response) => {
   const { name, studentid, schoolid, grade, classr, gender, age } = request.body
 
-  db.query('INSERT INTO studentinfo (name, studentid, schoolid, grade, class, gender,age) VALUES ($1, $2, $3, $4, $5, $6,$7)', [name, studentid, schoolid, grade, classr, gender, age], (error, results) => {
+  db.query('INSERT INTO studentinfo (name, studentid, schoolid, grade, class, gender,age) VALUES ($1, $2, $3, $4, $5, $6, $7)', [name, studentid, schoolid, grade, classr, gender, age], (error, results) => {
     if (error) {
       throw error
     }
