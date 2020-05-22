@@ -42,13 +42,15 @@ class DataService {
     getStudent() {
         return http.get("/students");
     }
-    createStudent(data){
-        return http.post("/students",data)
+    createStudent(data) {
+        return http.post("/students", data)
     }
-    measureRecord(data){
-        return http.post("/records",data)
+    measureRecord(data) {
+        return http.post("/records", data)
     }
-    
+    getMeasureById(id) {
+        return http.get(`/record/${id}`);
+    }
 }
 
 export default new DataService();
