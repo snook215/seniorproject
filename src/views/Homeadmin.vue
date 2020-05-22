@@ -2,8 +2,8 @@
     <div class="collectdata">
         <section class="hero">
         <div class="hero-body">
-            <div class="container has-text-centered has-text-white">
-            <p class="title ">Hello Admin GoGoo</p>
+            <div class="container has-text-centered">
+            <p class="title has-text-white">Hello Admin GoGoo</p>
             </div>
         </div>
         </section>
@@ -32,10 +32,5 @@
 }
 .hero-body {
   background-color: rgb(204, 99, 204);
-}
-div.a {
-  margin-top: 20px;
-  
-  margin-left: 700px;
 }
 </style>
