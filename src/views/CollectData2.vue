@@ -3,27 +3,12 @@
     <section class="hero">
       <div class="hero-body">
         <div class="container has-text-centered">
-          <p class="title">Enter your student information</p>
+          <p class="title has-text-white">Enter your student information</p>
         </div>
       </div>
     </section>
 
-    <!-- choose plan -->
     <br />
-
-    <!--  <div id="file-js-example " class="file has-name is-info is-centered">
-      <label class="file-label">
-        <input class="file-input" type="file" name="resume">
-        <span class="file-cta">
-          <span class="file-icon">
-            <i class="fas fa-upload"></i>
-          </span>
-          <span class="file-label">Choose a file…</span>
-        </span>
-        <span class="file-name">No file uploaded</span>
-      </label>
-    </div>       
-    <p class="help has-text-centered">Import your .csv file</p>-->
 
     <!-- form input student information -->
     <div class="b">

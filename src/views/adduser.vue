@@ -3,7 +3,7 @@
         <section class="hero">
             <div class="hero-body">
                 <div class="container has-text-centered">
-                <p class="title">User information</p>
+                <p class="title has-text-white">User information</p>
                 </div>
             </div>
         </section>
@@ -72,7 +72,7 @@
             <br/>
             <div class="field is-grouped is-grouped-centered">
                 <p class="control">
-                <router-link to="/Profile" class="button">Back</router-link>
+                <router-link to="/Homeadmin" class="button">Back</router-link>
                 </p>  
                 <p class="control">
           <button @click="handleClick()" class="button is-success">Save</button>

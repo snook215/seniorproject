@@ -3,7 +3,7 @@
     <section class="hero">
       <div class="hero-body">
         <div class="container has-text-centered">
-          <p class="title">Collect data</p>
+          <p class="title has-text-white">Collect data</p>
           <!-- <p class="subtitle">Sub</p> -->
         </div>
       </div>
