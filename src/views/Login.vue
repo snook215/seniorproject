@@ -1,3 +1,4 @@
+/* eslint-disable no-unused-vars */
 <!-- Feature Login branch!-->
 <template>
   <section class="hero">
@@ -61,24 +62,38 @@ export default {
     return {
       username: "",
       password: "",
-      msg: ''
+      msg: 'test'
     };
   },
   methods: {
-     login() {
+     async login() {
+      try{
       let credentials = {
           username: this.username,
           password: this.password
         };
-        AuthService.login(credentials)
-          .then(response => {
-            console.log(response.data);
-          })
-          .catch(e => {
-            this.msg = console.log(e);
-          });
-        this.$router.push('/');
+        const response = await AuthService.login(credentials);
+        this.msg = response.msg;
+        alert("1."+this.msg)
+        // eslint-disable-next-line no-unused-vars
+        const token = response.token;
+        // eslint-disable-next-line no-unused-vars
+        const user = response.user;
+        // AuthService.login(credentials)
+        //   .then(response => {
+        //     alert("1."+ response)
+        //    // this.$router.push('/');
+        //   })
+        //   .catch(e => {
+        //     alert("2."+ this.msg)
+        //     this.msg = console.log(e);
+        //   });
      }
+      catch (error) {
+        this.msg = error.response.data.msg;
+        alert("2."+this.msg);
+      }
+  }
   }
 };
 </script>

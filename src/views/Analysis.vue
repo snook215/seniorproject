@@ -8,9 +8,12 @@
       </div>
     </section>
     <p class="control">
-    <input class="input" type="text" v-model="id" placeholder="studentid" />
+      <input class="input" type="text" v-model="id" placeholder="studentid" />
       <button @click="recordById(id)" class="button is-success">show</button>
     </p>
+    <div>
+      <download-csv :data="users">Download Data</download-csv>
+    </div>
     <br />
     <br />
     <br />
@@ -21,7 +24,13 @@
     <br />
 
     <div class="a">
-      <line-chart :data="HeightchartData" xtitle="Date" ytitle="Height(cm)" width="600px" height="250px"></line-chart>
+      <line-chart
+        :data="HeightchartData"
+        xtitle="Date"
+        ytitle="Height(cm)"
+        width="600px"
+        height="250px"
+      ></line-chart>
       <line-chart
         :data="WeightchartData"
         xtitle="Date"
@@ -36,6 +45,9 @@
 
 <script>
 import DataService from "../services/dataService";
+import Vue from "vue";
+import JsonCSV from "vue-json-csv";
+Vue.component("downloadCsv", JsonCSV);
 
 export default {
   name: "chart",
@@ -49,12 +61,7 @@ export default {
         "2017-09-16": 158,
         "2017-10-16": 158,
         "2017-11-16": 160,
-        "2017-12-16": 161,
-        "2018-01-16": 162,
-        "2018-02-16": 165,
-        "2018-03-16": 165,
-        "2018-04-16": 165,
-        "2018-05-16": 165
+        "2017-12-16": 161
       },
       WeightchartData: {
         "2017-05-16": 43,
@@ -65,11 +72,7 @@ export default {
         "2017-10-16": 46,
         "2017-11-16": 48,
         "2017-12-16": 48,
-        "2018-01-16": 60,
-        "2018-02-16": 62,
-        "2018-03-16": 62,
-        "2018-04-16": 62,
-        "2018-05-16": 61
+        "2018-01-16": 60
       },
       users: []
     };
@@ -79,7 +82,6 @@ export default {
       DataService.getMeasureById(this.id)
         .then(response => {
           this.users = response.data;
-          console.log(response.data);
         })
         .catch(e => {
           console.log(e);
