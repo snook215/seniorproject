@@ -25,7 +25,7 @@
 
     <div class="a">
       <line-chart
-        :data="HeightchartData"
+        :data="data"
         xtitle="Date"
         ytitle="Height(cm)"
         width="600px"
@@ -53,6 +53,13 @@ export default {
   name: "chart",
   data() {
     return {
+        data: [
+    { x: 0, y: 300 },
+    { x: 1, y: 700 },
+    { x: 2, y: 450 },
+    { x: 3, y: 750 },
+    { x: 4, y: 450 }
+  ],
       HeightchartData: {
         "2017-05-16": 150,
         "2017-06-16": 155,

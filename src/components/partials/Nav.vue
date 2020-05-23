@@ -12,7 +12,7 @@
   </div>
   <div id="navbar" class="navbar-menu">
     <div class="navbar-start">
-      <router-link to="/studentdata" class="navbar-item">Show student</router-link>
+      <router-link to="/studentdata" class="navbar-item">Show</router-link>
       <router-link to="/collectdata" class="navbar-item">Collect Data</router-link>
       <router-link to="/about" class="navbar-item">About</router-link>
       <router-link to="/analysis" class="navbar-item">Analysis</router-link>
@@ -21,13 +21,8 @@
 <div class="navbar-end">
   <div class="navbar-item">
     <div class="buttons">
-      <!-- Check that the SDK client is not currently loading before accessing is methods -->
-      <div v-if="!$auth.loading">
-        <!-- show login when not authenticated -->
-        <a v-if="!$auth.isAuthenticated" @click="login" class="button is-dark"><strong>Log out</strong></a>
-        <!-- show logout when authenticated -->
-        <a v-if="$auth.isAuthenticated" @click="logout" class="button is-dark"><strong>Log out</strong></a>
-      </div>
+      <router-link to="/login" class="button is-dark">log out</router-link>
+
     </div>
   </div>
 </div>
@@ -47,6 +42,9 @@ export default {
     this.$auth.logout({
       returnTo: window.location.origin
     });
+  },
+  alert(){
+    alert("Log out success");
   }
   }
 }

@@ -145,7 +145,7 @@ export default {
         alert("Add student " + this.firstname);
         this.$router.push('/');
       } else {
-        alert("Please Fill All Required Field");
+        alert("Please fill all required field");
       }
     }
   }
