@@ -1,5 +1,6 @@
 <template>
   <div class="editstudent">
+    <Nav />
     <section class="hero">
       <div class="hero-body">
         <div class="container has-text-centered">
@@ -94,7 +95,11 @@
 </template>
  
  <script>
+ import Nav from '../components/partials/Nav.vue';
 export default {
+  components: {
+    Nav
+  },
   methods: {
     handleClick: function() {
       alert("Edit data success!");

@@ -9,64 +9,53 @@
       </div>
     </section>
 
-    <br />
+        <div class="has-text-centered">
+          <download-csv :data   = "users"> Download Data </download-csv>
+        </div>
+        
+        <br>
+        <br>
+        <br>
+        
+        <div class="table">
+            <table class="table">
+                <thead>
+                    <tr>
+                        <th>No.</th>
+                        <th>Student ID</th>
+                        <th>Name</th>
+                        <th>School</th>
+                        <th>Grade</th>
+                        <th>Class</th>
+                        <th>Age</th>
+                        <th>Gender</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr v-for="(item , index) in users" :key="item.id">
+                    <th>{{index+1}}</th>
+                    <th>{{item.studentid}}</th>
+                    <td>{{item.name}}</td>
+                    <td>{{ "KMUTT"}}</td>
+                    <td>{{item.grade}}</td>
+                    <td>{{item.class}}</td>
+                    <td>{{item.age}}</td>
+                    <td>{{item.gender}}</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
 
-    <label class="label has-text-centered-desktop">Select</label>
-    <div class="field has-addons has-addons-centered">
-      <p class="control">
-        <span class="select">
-          <select name="grade" v-model="fillter" >
-            <option value="0">All</option>
-            <option value="1">studentid</option>
-            <!-- <option value="2">Gender</option> -->
-            <option value="3">age</option>
-            <option value="4">schoolid</option>
-          </select>
-        </span>
-      </p>
-      <p class="control">
-        <input class="input" v-model ="keydata" type="text" placeholder="keyword" />
-      </p>
-      <p class="control">
-        <a class="button is-success" @click="retrieveUsersfillter(keydata)">Done</a>
-      </p>
-    </div>
+        <br/>
+        <br/>
+        <br>
 
-    <div class="has-text-centered">
-      <download-csv :data="users">Download Data</download-csv>
-    </div>
+        <div class="field is-centered">
+                    <p class="control has-text-centered">
+                        <router-link to="/editstudent" class="button is-info">Edit</router-link>
+                    </p> 
+        </div>
 
-    <br />
-    <br />
-    <br />
-
-    <div class="table">
-      <table class="table">
-        <thead>
-          <tr>
-            <th>No.</th>
-            <th>Student ID</th>
-            <th>Name</th>
-            <th>School</th>
-            <th>Grade</th>
-            <th>Class</th>
-            <th>Age</th>
-            <th>Gender</th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr v-for="(item , index) in users" :key="item.id">
-            <th>{{index+1}}</th>
-            <th>{{item.studentid}}</th>
-            <td>{{item.name}}</td>
-            <td>{{ "KMUTT"}}</td>
-            <td>{{item.grade}}</td>
-            <td>{{item.class}}</td>
-            <td>{{item.age}}</td>
-            <td>{{item.gender}}</td>
-          </tr>
-        </tbody>
-      </table>
     </div>
   </div>
 </template>
