@@ -27,7 +27,7 @@ app.delete('/user/:id', db.deleteUser)
 //School
 app.get('/schools', db.getSchools)
 // app.get('/schools/:id', db.getSchoolById)
-// app.post('/schools', db.createSchool)
+app.post('/schools', db.createSchool)
 // app.put('/schools/:id', db.updateSchool)
 // app.delete('/schools/:id', db.deleteSchool)
 

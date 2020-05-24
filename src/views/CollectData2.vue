@@ -33,7 +33,7 @@
         <div class="control">
           <label class="label">Gender</label>
           <label class="radio">
-            <input type="radio" v-model="picked" value="Male" name="question"  />
+            <input type="radio" v-model="picked" value="Male" name="question" />
             Male
           </label>
           <label class="radio">
@@ -94,7 +94,7 @@
  
 <script>
 import DataService from "../services/dataService";
-import Nav from '../components/partials/Nav.vue';
+import Nav from "../components/partials/Nav.vue";
 export default {
   name: "collectdata",
   components: {
@@ -104,35 +104,48 @@ export default {
     return {
       picked: "",
       grade: "",
-      schoolid: "1"
+      schoolid: "1",
+      studentid: "",
+      firstname: "",
+      lastname: "",
+      gender: "",
+      age: "",
+      classr: ""
     };
   },
   methods: {
-        handleChange(event) {
-            console.log(event.target.value)
-        },
-         addStudent() {
+    handleChange(event) {
+      console.log(event.target.value);
+    },
+    addStudent() {
       let obj = {
         studentid: this.studentid,
         name: this.firstname + " " + this.lastname,
         schoolid: this.schoolid,
-        gender:this.picked,
+        gender: this.picked,
         age: this.age,
         grade: this.grade,
         classr: this.classr
-      }
-      if (this.studentid != "" && this.firstname != "" && this.lastname != "" &&
-          this.schoolid != "" && this.picked != "" && this.age != "" &&
-          this.grade != "" && this.classr != "") {
+      };
+      if (
+        this.studentid != "" &&
+        this.firstname != "" &&
+        this.lastname != "" &&
+        this.schoolid != "" &&
+        this.picked != "" &&
+        this.age != "" &&
+        this.grade != "" &&
+        this.classr != ""
+      ) {
         DataService.createStudent(obj)
-        .then(response => {
-          console.log(response.data);
-        })
-        .catch(e => {
-          console.log(e);
-        });
+          .then(response => {
+            console.log(response.data);
+          })
+          .catch(e => {
+            console.log(e);
+          });
         alert("Add student " + this.firstname);
-        this.$router.push('/');
+        this.$router.push("/home");
       } else {
         alert("Please fill all required field");
       }
