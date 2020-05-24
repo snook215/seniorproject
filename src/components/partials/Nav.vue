@@ -12,8 +12,25 @@
   </div>
   <div id="navbar" class="navbar-menu">
     <div class="navbar-start">
-      <router-link to="/studentdata" class="navbar-item">Show</router-link>
-      <router-link to="/collectdata" class="navbar-item">Collect Data</router-link>
+      <router-link to="/studentdata" class="navbar-item">Show</router-link>   
+        <div class="navbar-item has-dropdown is-hoverable">
+        <a class="navbar-link"> Collect Data </a>
+        <div class="navbar-dropdown is-boxed">
+          <a class="navbar-item"> 
+            <router-link to="/collectdata">
+              Student Data
+            </router-link>
+          </a> 
+          <a class="navbar-item">
+            <router-link to="/addrecord">
+              Student measurement
+            </router-link>
+          </a>
+
+        </div>
+      </div>
+
+
       <router-link to="/about" class="navbar-item">About</router-link>
       <router-link to="/analysis" class="navbar-item">Analysis</router-link>
     </div>

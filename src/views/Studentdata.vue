@@ -68,6 +68,17 @@
                 </tbody>
             </table>
         </div>
+
+        <br/>
+        <br/>
+        <br>
+
+        <div class="field is-centered">
+                    <p class="control has-text-centered">
+                        <router-link to="/editstudent" class="button is-info">Edit</router-link>
+                    </p> 
+        </div>
+
     </div>
 </template>
 
