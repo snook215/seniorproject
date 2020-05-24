@@ -8,7 +8,6 @@ import Chart from 'chart.js'
 
 import VueRouter from 'vue-router'
 
-
 // ประกาศ Axios
 import VueAxios from "vue-axios";
 import axios from "axios";
@@ -20,7 +19,6 @@ Vue.config.productionTip = false
 // เรียกใช้
 Vue.use(VueAxios, axios);
 Vue.use(VueRouter)
-
 // Font AwesomeIcon for more info https://github.com/FortAwesome/vue-fontawesome#installation
 import { library } from '@fortawesome/fontawesome-svg-core'
 import { faUserSecret } from '@fortawesome/free-solid-svg-icons'
