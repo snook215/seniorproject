@@ -1,5 +1,6 @@
 <template>
   <div class="collectdata2">
+    <Nav />
     <section class="hero">
       <div class="hero-body">
         <div class="container has-text-centered">
@@ -93,9 +94,12 @@
  
 <script>
 import DataService from "../services/dataService";
-
+import Nav from '../components/partials/Nav.vue';
 export default {
   name: "collectdata",
+  components: {
+    Nav
+  },
   data() {
     return {
       picked: "",

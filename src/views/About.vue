@@ -1,5 +1,6 @@
 <template>
   <div class="about">
+	<Nav />
     <section class="hero is-fullheight">
 		<div class="hero-body">
 			<div class="container has-text-centered">
@@ -44,6 +45,17 @@
   
   </div>
 </template>
+
+<script>
+import Nav from '../components/partials/Nav.vue';
+export default {
+	components: {
+    Nav
+  }
+}
+</script>
+
+
 <style lang="scss" scoped>
   .org-description {
     margin-top: 50px;

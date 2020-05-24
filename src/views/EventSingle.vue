@@ -1,6 +1,7 @@
 <template>
   <div class="event-single">
-    <section class="hero is-primary">
+    <Nav />
+    <section class="hero">
       <div class="hero-body">
         <div class="container">
           <h1 class="title">
@@ -30,8 +31,12 @@
 </template>
 
 <script>
+import Nav from '../components/partials/Nav.vue';
 export default {
   name: 'EventSingle',
+  components: {
+    Nav
+  },
   data () {
     return {
       events: [
@@ -74,3 +79,9 @@ export default {
   }
 }
 </script>
+
+<style lang="scss" scoped>
+.hero {
+  background-color: rgb(204, 99, 204);
+}
+</style>

@@ -1,5 +1,6 @@
 <template>
     <div class="Studentdata">
+      <Nav />
         <section class="hero">
             <div class="hero-body">
                 <div class="container has-text-centered">
@@ -9,15 +10,36 @@
         </section>
         
         <br>
+
+        <label class="label has-text-centered-desktop">Select</label>
+        <div class="field has-addons has-addons-centered">
+          <p class="control">
+            <span class="select">
+              <select>
+                <option>1</option>
+                <option>2</option>
+                <option>3</option>
+              </select>
+            </span>
+          </p>
+          <p class="control">
+            <input class="input" type="text" placeholder="studentID">
+          </p>
+          <p class="control">
+            <a class="button is-success">
+              Done
+            </a>
+          </p>
+        </div>
+
+        <div class="has-text-centered">
+          <download-csv :data   = "users"> Download Data </download-csv>
+        </div>
+        
         <br>
         <br>
         <br>
-        <br>
-        <br>
-<download-csv
-    :data   = "users">
-    Download Data
-</download-csv>
+        
         <div class="table">
             <table class="table">
                 <thead>
@@ -48,16 +70,19 @@
         </div>
     </div>
 </template>
+
 <script>
 import DataService from "../services/dataService";
-
+import Nav from '../components/partials/Nav.vue';
 import Vue from 'vue'
 import JsonCSV from 'vue-json-csv'
 Vue.component('downloadCsv', JsonCSV)
 
 export default {
 name: "app",
-
+ components: {
+    Nav
+ },
   data() {
     return {
       users: [],

@@ -1,5 +1,6 @@
 <template>
     <div class="csvupload">
+      <Nav />
         <section class="hero">
         <div class="hero-body">
             <div class="container has-text-centered">
@@ -38,10 +39,11 @@
 
 <script>
   import { XlsCsvParser } from 'vue-xls-csv-parser';
-
+  import Nav from '../components/partials/Nav.vue';
     export default {
         components : {
       XlsCsvParser,
+      Nav
     },
     methods: {
       onValidate(results) {
