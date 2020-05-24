@@ -12,10 +12,10 @@
   </div>
   <div id="navbar" class="navbar-menu">
     <div class="navbar-start">
-      <router-link to="/studentdata" class="navbar-item">Show</router-link>
+      <router-link to="/studentdata" class="navbar-item">Show student</router-link>
       <router-link to="/collectdata" class="navbar-item">Collect Data</router-link>
-      <router-link to="/about" class="navbar-item">About</router-link>
       <router-link to="/analysis" class="navbar-item">Analysis</router-link>
+      <router-link to="/about" class="navbar-item">About</router-link>
     </div>
   </div>
 <div class="navbar-end">
