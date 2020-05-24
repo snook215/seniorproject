@@ -3,7 +3,7 @@
         <section class="hero">
             <div class="hero-body">
                 <div class="container has-text-centered">
-                <p class="title">Profile</p>
+                <p class="title has-text-white">Profile</p>
                 </div>
             </div>
         </section>

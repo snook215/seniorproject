@@ -1,9 +1,10 @@
 <template>
   <div class="collectdata">
+    <Nav />
     <section class="hero">
       <div class="hero-body">
         <div class="container has-text-centered">
-          <p class="title">Collect data</p>
+          <p class="title has-text-white">Collect data</p>
           <!-- <p class="subtitle">Sub</p> -->
         </div>
       </div>
@@ -25,6 +26,15 @@
 
   </div>
 </template>
+
+<script>
+import Nav from '../components/partials/Nav.vue';
+export default {
+  components: {
+    Nav
+  }
+}
+</script>
 
 
 <style lang="scss" scoped>

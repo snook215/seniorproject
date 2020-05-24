@@ -1,11 +1,12 @@
 <template>
   <div class="about">
+	<Nav />
     <section class="hero is-fullheight">
 		<div class="hero-body">
 			<div class="container has-text-centered">
 				<div class="columns is-8 is-variable ">
 					<div class="column is-three-fifths has-text-left">
-						<h1 class="title is-1">Contact Us</h1>
+						<h1 class="title is-1 has-text-white">Contact Us</h1>
 						<p class="is-size-4">Project it amet consectetur adipisicing elit. Nulla eligendi soluta
 							voluptate facere molestiae consequatur.</p>
 					</div>
@@ -44,6 +45,17 @@
   
   </div>
 </template>
+
+<script>
+import Nav from '../components/partials/Nav.vue';
+export default {
+	components: {
+    Nav
+  }
+}
+</script>
+
+
 <style lang="scss" scoped>
   .org-description {
     margin-top: 50px;

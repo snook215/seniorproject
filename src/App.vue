@@ -1,13 +1,13 @@
 <template>
   <div id="app">
-    <font-awesome-icon icon="user-secret" />
-    <Nav />
+    <!-- <font-awesome-icon icon="user-secret" /> -->
+    <!-- <Nav /> -->
     <router-view/>
   </div>
 </template>
 
 <script>
-import Nav from './components/partials/Nav.vue';
+// import Nav from './components/partials/Nav.vue';
 // import Login from "./views/Login";
 import store from "./store";
 
@@ -15,7 +15,7 @@ export default {
   store,
   name: 'app',
   components: {
-    Nav
+    // Nav
   }
 }
 </script>

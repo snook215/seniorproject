@@ -82,6 +82,11 @@ export default new VueRouter({
       path: '/addrecord',
       name: 'addrecord',
       component: () => import('../views/addmeasurement.vue')
+    },
+    {
+      path: '/Homeadmin',
+      name: 'Homeadmin',
+      component: () => import('../views/Homeadmin.vue')
     }
   ]
 })

@@ -1,23 +1,26 @@
 <template>
   <div class="analysis">
+    <Nav />
     <section class="hero">
       <div class="hero-body">
         <div class="container has-text-centered">
-          <p class="title">Analysis</p>
+          <p class="title">Analysi--- test s</p>
         </div>
       </div>
     </section>
-    <p class="control">
-      <input class="input" type="text" v-model="id" placeholder="studentid" />
-      <button @click="recordById(id)" class="button is-success">show</button>
-    </p>
-    <div>
-      <download-csv :data="users">Download Data</download-csv>
-    </div>
-    <br />
-    <br />
-    <br />
-    <br />
+     <br />
+
+      <p class="control has-text-centered">
+        <input class="input has-text-centered-desktop" type="text" v-model="id" placeholder="studentid" /> 
+        <br/>
+        <br/>
+        <button @click="recordById(id)" class="button is-success">show</button>
+      </p>
+      <br/>
+      <div class="b has-text-centered">
+        <download-csv :data="users">Download Data</download-csv>
+      </div>
+
     <br />
     <br />
     <br />
@@ -39,6 +42,7 @@
         height="250px"
       ></line-chart>
     </div>
+  
   </div>
 </template>
 
@@ -47,10 +51,14 @@
 import DataService from "../services/dataService";
 import Vue from "vue";
 import JsonCSV from "vue-json-csv";
+import Nav from '../components/partials/Nav.vue';
 Vue.component("downloadCsv", JsonCSV);
 
 export default {
-  name: "chart",
+  name: 'chart',
+  components: {
+    Nav
+  },
   data() {
     return {
         data: [
@@ -95,19 +103,23 @@ export default {
         });
     }
   }
-};
+
+}
 </script>
 
 
 <style lang="scss" scoped>
-.org-description {
+  .org-description {
   margin-top: 50px;
-}
-.hero-body {
-  background-color: rgb(204, 99, 204);
-}
-div.a {
-  margin-top: 20px;
-  margin-left: 500px;
-}
+  }
+  .hero-body {
+    background-color: rgb(204, 99, 204);
+  }
+  div.a {
+    margin-top: 20px;
+    margin-left: 500px;
+  } 
+  input {
+    width: 30%;
+  }
 </style>
