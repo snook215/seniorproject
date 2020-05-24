@@ -70,7 +70,7 @@ export default {
           });
 
         alert("Add record for id: " + this.studentid);
-        this.$router.push('/');          
+        this.$router.push('/home');          
       } else {
         alert("Please Fill All Required Field");
       }

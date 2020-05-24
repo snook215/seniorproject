@@ -130,6 +130,16 @@ const createStudent = (request, response) => {
     response.status(201).send(`User added with ID: ${results.name}`)
   })
 }
+const createSchool = (request, response) => {
+  const { schoolid, schoolname, address, tel } = request.body
+
+  db.query('INSERT INTO school (schoolid, schoolname, address, tel) VALUES ($1, $2, $3, $4)', [schoolid, schoolname, address, tel], (error, results) => {
+    if (error) {
+      throw error
+    }
+    response.status(201).send(`User added with ID: ${results.name}`)
+  })
+}
 
 // const updateSchool = (request, response) => {
 //   const id = parseInt(request.params.id)
@@ -304,6 +314,7 @@ module.exports = {
   getStudentBySchoolId,
 
   getSchools,
+  createSchool,
   login,
   register,
 

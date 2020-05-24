@@ -76,6 +76,10 @@ export default {
             alert("Admin - Login success!");
             this.$router.push('/Homeadmin')
           }
+          else if (this.username == "staff" && this.password == "staff") {
+            alert("Login success!");
+            this.$router.push('/home');
+          }
           else if (this.username == "testuser" && this.password == "testuser") {
             alert("Login success!");
             this.$router.push('/home');
