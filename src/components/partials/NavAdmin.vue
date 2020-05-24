@@ -2,7 +2,9 @@
   <nav class="navbar container" role="navigation" aria-label="main navigation">
     <div class="navbar-brand">
       <a class="navbar-item">
-        <strong class="is-size-4" >Child Growth</strong>
+        <router-link to="/homeadmin">
+          <strong class="is-size-4" >Child Growth</strong>
+        </router-link>
       </a>
       <a
         role="button"

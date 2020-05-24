@@ -1,7 +1,7 @@
 <template>
   <nav class="navbar container" role="navigation" aria-label="main navigation">
     <div class="navbar-brand">
-      <a class="navbar-item" href="/">
+      <a class="navbar-item" href="/home">
         <strong class="is-size-4">Child Growth</strong>
       </a>
       <a

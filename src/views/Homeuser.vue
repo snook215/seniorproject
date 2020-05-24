@@ -1,6 +1,6 @@
 <template>
 <div class="home">
-  <Nav />
+  <NavUser />
   <section class="hero is-dark">
     <div class="hero-body">
       <div class="container">
@@ -24,12 +24,12 @@
 
 <script>
 import EventsList from '../components/EventsList';
-import Nav from '../components/partials/Nav.vue';
+import NavUser from '../components/partials/NavUser.vue';
 export default {
   name: 'home',
   components: {
     EventsList,
-    Nav
+    NavUser
   }
 }
 </script>

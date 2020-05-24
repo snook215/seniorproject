@@ -1,6 +1,6 @@
 <template>
   <div class="about">
-	<Nav />
+	<NavUser />
     <section class="hero is-fullheight">
 		<div class="hero-body">
 			<div class="container has-text-centered">
@@ -49,11 +49,11 @@
 </template>
 
 <script>
-import Nav from '../components/partials/Nav.vue';
+import NavUser from '../components/partials/NavUser.vue';
 import emailjs from 'emailjs-com'
 export default {
 	components: {
-    Nav
+    NavUser
   },
   methods: {
 	sendEmail:  (e) => {

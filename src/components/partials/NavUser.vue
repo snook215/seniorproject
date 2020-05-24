@@ -1,8 +1,8 @@
 <template>
   <nav class="navbar container" role="navigation" aria-label="main navigation">
     <div class="navbar-brand">
-      <a class="navbar-item">
-        <strong class="is-size-4" >Child Growth</strong>
+      <a class="navbar-item" href="/home">
+        <strong class="is-size-4">Child Growth</strong>
       </a>
       <a
         role="button"
@@ -18,8 +18,9 @@
     </div>
     <div id="navbar" class="navbar-menu">
       <div class="navbar-start">
-        <router-link to="/adduser" class="navbar-item">Add user</router-link>
-        <router-link to="/addschool" class="navbar-item">Add school</router-link>
+        <router-link to="/studentdata" class="navbar-item">Show student</router-link>
+        <router-link to="/analysis" class="navbar-item">Analysis</router-link>
+        <router-link to="/about" class="navbar-item">About</router-link>
       </div>
     </div>
     <div class="navbar-end">
@@ -36,6 +37,11 @@
 export default {
   name: "Nav",
   methods: {
+    // Log the user in
+    login() {
+      this.$auth.loginWithRedirect();
+    },
+    // Log the user out
     logout() {
       this.$auth.logout({
         returnTo: window.location.origin

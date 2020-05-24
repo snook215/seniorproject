@@ -14,13 +14,13 @@
 
 <script>
 import NavAdmin from "../components/partials/NavAdmin.vue";
-
 export default {
   components: {
     NavAdmin
   }
 };
 </script>
+
 <style lang="scss" scoped>
 .org-description {
   margin-top: 50px;
