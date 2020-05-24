@@ -1,12 +1,13 @@
 import Vue from 'vue'
 import App from './App.vue'
 import router from './router'
-import store from './store';
-import './../node_modules/bulma/css/bulma.css';
+import store from './store'
+import './../node_modules/bulma/css/bulma.css'
 import Chartkick from 'vue-chartkick'
 import Chart from 'chart.js'
 
 import VueRouter from 'vue-router'
+
 
 // ประกาศ Axios
 import VueAxios from "vue-axios";

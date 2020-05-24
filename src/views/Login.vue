@@ -1,3 +1,4 @@
+/* eslint-disable no-unused-vars */
 <!-- Feature Login branch!-->
 <template>
   <section class="hero">
@@ -44,7 +45,6 @@
                 </label>
               </div>
               <div class="field has-text-centered">
-                <label for class="label">{{ msg }}</label>
                 <button class="button is-success" @click="login()">Login</button>
               </div>
             </form>
@@ -55,32 +55,66 @@
   </section>
 </template>
 <script>
-import AuthService from '../services/authService.js';
+// import AuthService from '../services/authService.js';
 export default {
   data() {
     return {
       username: "",
       password: "",
-      msg: ''
+      msg: 'test'
     };
   },
   methods: {
-     login() {
-      let credentials = {
-          username: this.username,
-          password: this.password
-        };
-        AuthService.login(credentials)
-          .then(response => {
-            console.log(response.data);
-          })
-          .catch(e => {
-            this.msg = console.log(e);
-          });
-        this.$router.push('/');
-     }
-  }
-};
+    login() {
+        // eslint-disable-next-line no-unused-vars
+        let obj = {
+        username: this.username,
+        password: this.password
+      };
+      if (this.username != "" && this.password != "") {
+          if(this.username == "admin" && this.password == "admin"){
+            alert("Admin - Login success!");
+            this.$router.push('/');
+          }
+          else if (this.username == "testuser" && this.password == "testuser") {
+            alert("Login success!");
+            this.$router.push('/');
+          }
+          else {
+          alert("A username or password not correct");           
+          }
+      } else {
+        alert("Please fill all required field");
+      }
+    }
+      // try{
+      // let credentials = {
+      //     username: this.username,
+      //     password: this.password
+      //   };
+      //   const response = await AuthService.login(credentials);
+      //   this.msg = response.msg;
+      //   alert("1."+this.msg)
+      //   // eslint-disable-next-line no-unused-vars
+      //   const token = response.token;
+      //   // eslint-disable-next-line no-unused-vars
+      //   const user = response.user;
+        // AuthService.login(credentials)
+        //   .then(response => {
+        //     alert("1."+ response)
+        //    // this.$router.push('/');
+        //   })
+        //   .catch(e => {
+        //     alert("2."+ this.msg)
+        //     this.msg = console.log(e);
+        //   });
+  //    }
+  //     catch (error) {
+  //       this.msg = error.response.data.msg;
+  //       alert("2."+this.msg);
+  //     }
+    }
+  };
 </script>
 <style type="text/css" scoped>
 .hero {

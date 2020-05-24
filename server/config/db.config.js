@@ -178,12 +178,8 @@ const register = (userMiddleware.validateRegister,(req,res,next) => {
 //login
 const login = (req, res, next) => {
   const {username,password} = req.body
-  console.log("1."+req.body.username)
-  console.log("2."+req.body.password)
-
   db.query(
     'SELECT * FROM userlogin WHERE username = $1', [username], (err, result) =>{
-    console.log("3."+result.rowCount)
       // user does not exists
       if (err) {
         // throw err;

@@ -14,7 +14,10 @@
         <br>
         <br>
         <br>
-
+<download-csv
+    :data   = "users">
+    Download Data
+</download-csv>
         <div class="table">
             <table class="table">
                 <thead>
@@ -48,8 +51,13 @@
 <script>
 import DataService from "../services/dataService";
 
+import Vue from 'vue'
+import JsonCSV from 'vue-json-csv'
+Vue.component('downloadCsv', JsonCSV)
+
 export default {
 name: "app",
+
   data() {
     return {
       users: [],
