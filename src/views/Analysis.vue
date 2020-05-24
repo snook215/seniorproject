@@ -4,7 +4,7 @@
     <section class="hero">
       <div class="hero-body">
         <div class="container has-text-centered">
-          <p class="title">Analysis</p>
+          <p class="title">Analysi--- test s</p>
         </div>
       </div>
     </section>
