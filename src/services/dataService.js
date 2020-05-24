@@ -42,6 +42,18 @@ class DataService {
     getStudent() {
         return http.get("/students");
     }
+    getStudentById(id) {
+        return http.get(`/students/${id}`);
+    }
+    getStudentByGender(id) {
+        return http.get(`/studentsgender/${id}`);
+    }
+    getStudentBySchoolId(id) {
+        return http.get(`/studentsch/${id}`);
+    }
+    getStudentByAge(id) {
+        return http.get(`/studentsage/${id}`);
+    }
     createStudent(data) {
         return http.post("/students", data)
     }

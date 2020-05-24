@@ -1,31 +1,26 @@
 <template>
-    <div class="collectdata">
-        <section class="hero">
-        <div class="hero-body">
-            <div class="container has-text-centered">
-            <p class="title has-text-white">Hello Admin GoGoo</p>
-            </div>
+  <div class="homeadmin">
+    <NavAdmin />
+    <section class="hero is-dark">
+      <div class="hero-body">
+        <div class="container">
+          <h1 class="title">Welcome to Child Growth</h1>
+          <h2 class="subtitle">You are Admin</h2>
         </div>
-        </section>
-        <br/>
-        
-        <div class="field is-grouped is-grouped-centered">
-            <p class="control">
-                
-                <!--<a class="button is-primary">Next step</a> -->
-                <router-link to="/adduser" class="button is-light">Add User</router-link>
-            </p>
-            <p class="control">
-                <router-link to="/addschool" class="button is-light">Add more school</router-link>
-            </p>
-        </div>
-  
-
-        
-    </div>
+      </div>
+    </section>
+  </div>
 </template>
 
+<script>
+import NavAdmin from "../components/partials/NavAdmin.vue";
 
+export default {
+  components: {
+    NavAdmin
+  }
+};
+</script>
 <style lang="scss" scoped>
 .org-description {
   margin-top: 50px;

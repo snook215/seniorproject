@@ -88,6 +88,37 @@ const getStudentById = (request, response) => {
     response.status(200).json(results.rows)
   })
 }
+const getStudentByGender = (request, response) => {
+  const gender = request.body
+  db.query('SELECT * FROM studentinfo WHERE LOWER(gender) = LOWER($1)', [gender], (error, results) => {
+    if (error) {
+      throw error
+    }
+    response.status(200).json(results.rows)
+  })
+}
+
+const getStudentBySchoolId = (request, response) => {
+  const id = parseInt(request.params.id)
+
+  db.query('SELECT * FROM studentinfo WHERE schoolid = $1', [id], (error, results) => {
+    if (error) {
+      throw error
+    }
+    response.status(200).json(results.rows)
+  })
+}
+const getStudentByAge = (request, response) => {
+  const id = parseInt(request.params.id)
+
+  db.query('SELECT * FROM studentinfo WHERE age = $1', [id], (error, results) => {
+    if (error) {
+      throw error
+    }
+    response.status(200).json(results.rows)
+  })
+}
+
 
 const createStudent = (request, response) => {
   const { name, studentid, schoolid, grade, classr, gender, age } = request.body
@@ -268,6 +299,9 @@ module.exports = {
   getStudents,
   getStudentById,
   createStudent,
+  getStudentByGender,
+  getStudentByAge,
+  getStudentBySchoolId,
 
   getSchools,
   login,

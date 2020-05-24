@@ -1,6 +1,7 @@
 import Vue from 'vue'
 import VueRouter from 'vue-router'
 import Home from '../views/Home.vue'
+import Admin from '../views/Homeadmin.vue'
 
 Vue.use(VueRouter)
 
@@ -10,6 +11,11 @@ export default new VueRouter({
   routes: [
     {
       path: '/',
+      name: 'login',
+      component: () => import('../views/Login.vue')
+    },
+    {
+      path: '/home',
       name: 'home',
       component: Home
     },
@@ -43,11 +49,11 @@ export default new VueRouter({
       name: 'Collectdata2',
       component: () => import('../views/CollectData2.vue')
     },
-    {
-      path: '/login',
-      name: 'Login',
-      component: () => import('../views/Login.vue')
-    },
+    // {
+    //   path: '/login',
+    //   name: 'Login',
+    //   component: () => import('../views/Login.vue')
+    // },
     {
       path: '/profile',
       name: 'Profile',
@@ -86,7 +92,7 @@ export default new VueRouter({
     {
       path: '/Homeadmin',
       name: 'Homeadmin',
-      component: () => import('../views/Homeadmin.vue')
+      component: Admin
     }
   ]
 })

@@ -34,6 +34,11 @@ app.get('/schools', db.getSchools)
 //StudentInfo
 app.get('/students', db.getStudents)
 app.get('/students/:id', db.getStudentById)
+
+app.get('/studentsgender/:gender', db.getStudentByGender)
+
+app.get('/studentsage/:id', db.getStudentByAge)
+app.get('/studentsch/:id', db.getStudentBySchoolId)
 app.post('/students', db.createStudent)
 // app.put('/students/:id', db.updateStudent)
 // app.delete('/students/:id', db.deleteStudent)

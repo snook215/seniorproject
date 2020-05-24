@@ -4,28 +4,28 @@
     <section class="hero">
       <div class="hero-body">
         <div class="container has-text-centered">
-          <p class="title">Analysi--- test s</p>
+          <p class="title">Analysis</p>
         </div>
       </div>
     </section>
      <br />
 
       <p class="control has-text-centered">
-        <input class="input has-text-centered-desktop" type="text" v-model="id" placeholder="studentid" /> 
+        <input class="input has-text-centered-desktop" type="text" v-model="keyword" placeholder="studentid" /> 
         <br/>
         <br/>
-        <button @click="recordById(id)" class="button is-success">show</button>
+        <button @click="recordById()" class="button is-success">show</button>
+        <button @click="testShowData()" class="button is-success">test</button>
+
       </p>
       <br/>
       <div class="b has-text-centered">
         <download-csv :data="users">Download Data</download-csv>
       </div>
-
     <br />
     <br />
     <br />
     <br />
-
     <div class="a">
       <line-chart
         :data="data"
@@ -61,13 +61,7 @@ export default {
   },
   data() {
     return {
-        data: [
-    { x: 0, y: 300 },
-    { x: 1, y: 700 },
-    { x: 2, y: 450 },
-    { x: 3, y: 750 },
-    { x: 4, y: 450 }
-  ],
+      data: {},
       HeightchartData: {
         "2017-05-16": 150,
         "2017-06-16": 155,
@@ -94,13 +88,31 @@ export default {
   },
   methods: {
     recordById() {
-      DataService.getMeasureById(this.id)
+      console.log(""+ this.keyword);
+      if(this.keyword != "" && this.keyword != undefined)  {
+      DataService.getMeasureById(this.keyword)
         .then(response => {
           this.users = response.data;
+          console.log(this.users.length)
         })
         .catch(e => {
           console.log(e);
         });
+    } else {
+      alert("Please input your keyword");
+    }
+    },
+    testShowData() {
+      var i=0;
+      var date;
+      for (i=0; i< this.users.length; i++){
+        date = this.users[i].created.split('T');
+        this.data[date[0]] = this.users[i].height;
+        console.log(""+this.data[date[0]])
+      }
+      for(var key in this.data){
+        console.log(""+key)
+      }
     }
   }
 

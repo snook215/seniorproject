@@ -1,5 +1,6 @@
 <template>
     <div class="editstudent">
+    <NavAdmin />
         <section class="hero">
             <div class="hero-body">
                 <div class="container has-text-centered">
@@ -75,7 +76,7 @@
                 <router-link to="/Homeadmin" class="button">Back</router-link>
                 </p>  
                 <p class="control">
-          <button @click="handleClick()" class="button is-success">Save</button>
+                <button @click="handleClick()" class="button is-success">Save</button>
                 </p>
             </div>
             <br>
@@ -84,7 +85,13 @@
 </template>
  
  <script>
+
+ import NavAdmin from "../components/partials/NavAdmin.vue";
+
 export default {
+    components: {
+    NavAdmin
+  },
   methods: {
     handleClick: function() {
       alert("Add data success!");

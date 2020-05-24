@@ -1,5 +1,6 @@
 <template>
   <div class="addschool">
+    <NavAdmin />
     <section class="hero">
       <div class="hero-body">
         <div class="container has-text-centered">
@@ -48,7 +49,12 @@
 
  
  <script>
+import NavAdmin from "../components/partials/NavAdmin.vue";
+
 export default {
+  components:{
+    NavAdmin
+  },
   methods: {
     handleClick: function() {
       alert("Add data success!");

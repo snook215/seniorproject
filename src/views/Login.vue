@@ -74,11 +74,11 @@ export default {
       if (this.username != "" && this.password != "") {
           if(this.username == "admin" && this.password == "admin"){
             alert("Admin - Login success!");
-            this.$router.push('/');
+            this.$router.push('/Homeadmin')
           }
           else if (this.username == "testuser" && this.password == "testuser") {
             alert("Login success!");
-            this.$router.push('/');
+            this.$router.push('/home');
           }
           else {
           alert("A username or password not correct");           
