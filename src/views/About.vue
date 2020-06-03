@@ -7,8 +7,11 @@
 				<div class="columns is-8 is-variable ">
 					<div class="column is-three-fifths has-text-left">
 						<h1 class="title is-1 has-text-white">Contact Us</h1>
-						<p class="is-size-4">Project it amet consectetur adipisicing elit. Nulla eligendi soluta
-							voluptate facere molestiae consequatur.</p>
+						<p class="is-size-6"> 
+							Computer Engineering Department, Faculty of Engineering
+                            10th-11th Floor, Witsawawattana Building,
+                            King Mongkut's University of technology Thonburi
+                            126 Pracha Uthit Road, Bang Mot, Thung Khru, Bangkok 10140</p>
 					</div>
 					<div class="column is-one-third has-text-left">
 						<form class="contact-form" @submit.prevent="sendEmail">

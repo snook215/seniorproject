@@ -86,7 +86,7 @@
           { name: 'created', value: 'created'},
         ],
         results: null,
-        help: 'Necessary columns are: Import file with required name, studentud, schoolid, grade, class, gender, age and created values',
+        help: 'Necessary columns are: Import file with required name, studentid, schoolid, grade, class, gender, age and created values',
       };
     },
   };

@@ -50,6 +50,44 @@
         width="600px"
         height="250px"
       ></line-chart>
+
+      <br>
+      <br>
+
+      <div class="table">
+        <table class="table is-bordered">
+          <thead>
+              <tr>
+                  <th>BMI kg/m^2</th>
+                  <th>In line</th>
+                  <th>Risk of disease</th>
+              </tr>
+          </thead>
+
+          <tbody>
+              <tr>
+                  <th> under 18.5 </th>
+                  <th> Underweight</th>
+                  <th>More than normal people</th>
+              </tr>
+              <tr>
+                  <th>18.5-24.90</th>
+                  <th>Normal weight</th>
+                  <th>Equal to normal people</th>
+              </tr>
+              <tr>
+                  <th>25-29.90</th>
+                  <th>Overweight</th>
+                  <th>Danger level 1</th>
+              </tr>
+              <tr>
+                  <th>30 or greater</th>
+                  <th>Obesity</th>
+                  <th>Danger level 2</th>
+              </tr>
+        </tbody>
+        </table>
+    </div>
     </div>
   </div>
 </template>
